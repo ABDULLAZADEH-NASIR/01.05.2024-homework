@@ -1,0 +1,79 @@
+1. Animal adlı bir class yaradin eat() və sleep() metodları olsun. Sonra Animal-dan miras alan Dog və Cat kimi subclasslar yaradin, və eat() metodunu her heyvanin ozune uygun specificlesdirin.
+
+
+2. Yuxaridaki tapsirigi genislendirib, PersianCat ve GoldenRetriever classlari yaradin.
+
+3. Animal classinda name ve age propertylerini parametr kimi qebul eden constructor yazin, daha sonra diger classlarin hamisinda constructorlar yaradib, super ve this keywordunun komeyi ile bu classlarin  butun propertylerinde deyer assign edin
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+
+    }
+}
+ class Animal{
+
+    public Animal(String name,int age){
+        this.name=name;
+        this.age=age;
+    }
+
+   String name;
+   int age;
+
+    public void eat(){
+        System.out.println("Butun heyvanlar bir canli kimi qidalanirlar");
+    }
+    public void  sleep(){
+        System.out.println("Butun heyvanlar bir canli kimi yatirlar");
+    }
+
+
+ }
+ class  dog extends Animal{
+    public  dog(String name,int age,int say){
+        super(name,age);
+        this.say=say;
+    }
+    int say;
+
+     @Override
+     public void eat() {
+         super.eat();
+         System.out.println("Itler sumuk yemeyi xoslayir");
+
+     }
+ }
+ class cat extends Animal{
+     public  cat(String name,int age,int say){
+        super(name,age);
+        this.say=say;
+    }
+    int say;
+     @Override
+     public void eat() {
+         super.eat();
+         System.out.println("Pisikler sican yeyirler");
+     }
+ }
+ class PersianCat extends cat{
+    public PersianCat(String name,int age,int say,String reng){
+        super(name,age,say);
+        this.reng= reng;
+
+    }
+    String reng;
+
+ }
+ class GoldenRetriever extends dog{
+    public GoldenRetriever(String name,int age,String reng,int say){
+        super(name,age,say);
+        this.reng=reng;
+    }
+
+    String reng;
+
+ }
